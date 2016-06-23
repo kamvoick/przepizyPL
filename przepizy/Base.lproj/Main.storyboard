@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uNs-tk-cXC">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="przepizy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,186 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="98" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tUH-ho-cbd">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleAspectFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="przepisCell" focusStyle="custom" rowHeight="98" id="8ZB-Eu-QbJ" customClass="przepisCell" customModule="przepizy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="98"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8ZB-Eu-QbJ" id="r3K-k8-ki4">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="97"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vrm-BW-mJY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="97"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jedzenie jedzenie jedzenie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQx-AO-s41">
+                                                    <rect key="frame" x="8" y="38" width="584" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="2DF-nE-Jnf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <size key="shadowOffset" width="1" height="1"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Vrm-BW-mJY" firstAttribute="leading" secondItem="r3K-k8-ki4" secondAttribute="leading" id="7mE-dx-ud9"/>
+                                                <constraint firstItem="Vrm-BW-mJY" firstAttribute="top" secondItem="r3K-k8-ki4" secondAttribute="top" id="8Dn-bH-s3c"/>
+                                                <constraint firstItem="vQx-AO-s41" firstAttribute="trailing" secondItem="r3K-k8-ki4" secondAttribute="trailingMargin" id="Fd5-eI-HPO"/>
+                                                <constraint firstAttribute="bottom" secondItem="Vrm-BW-mJY" secondAttribute="bottom" id="UKU-8B-5Sl"/>
+                                                <constraint firstItem="vQx-AO-s41" firstAttribute="leading" secondItem="r3K-k8-ki4" secondAttribute="leadingMargin" id="WBa-T9-ljm"/>
+                                                <constraint firstAttribute="trailing" secondItem="Vrm-BW-mJY" secondAttribute="trailing" id="dVv-Am-vqg"/>
+                                                <constraint firstItem="vQx-AO-s41" firstAttribute="centerX" secondItem="r3K-k8-ki4" secondAttribute="centerX" id="iNB-p6-tvm"/>
+                                                <constraint firstItem="vQx-AO-s41" firstAttribute="centerY" secondItem="r3K-k8-ki4" secondAttribute="centerY" id="veE-ge-YzP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="obrazekPrzepisu" destination="Vrm-BW-mJY" id="HdX-1A-w5t"/>
+                                            <outlet property="tytułPrzepisu" destination="vQx-AO-s41" id="yZM-91-bVq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tUH-ho-cbd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1us-fm-AvI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tUH-ho-cbd" secondAttribute="bottom" id="5gs-Dq-x0x"/>
+                            <constraint firstAttribute="trailing" secondItem="tUH-ho-cbd" secondAttribute="trailing" id="eDk-au-HfE"/>
+                            <constraint firstItem="tUH-ho-cbd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="i49-UJ-br9"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="A2Z-SO-6gY">
+                        <barButtonItem key="rightBarButtonItem" title="+ Dodaj" id="WAG-hI-Ecb">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="O2Y-SH-mz3" kind="show" id="V7w-TV-Rsp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="tUH-ho-cbd" id="fKb-cW-TgC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1057" y="337"/>
+        </scene>
+        <!--Dodaj PrzepisVC-->
+        <scene sceneID="E3O-2g-OLf">
+            <objects>
+                <viewController id="O2Y-SH-mz3" customClass="dodajPrzepisVC" customModule="przepizy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m6l-zb-H0S"/>
+                        <viewControllerLayoutGuide type="bottom" id="CR8-wf-cRb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8M9-T4-GBh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tytuł przepisu" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gS8-3g-fjB">
+                                <rect key="frame" x="20" y="97" width="560" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Składniki" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a3k-PY-JIe">
+                                <rect key="frame" x="20" y="148" width="560" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sposób przygotowania" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qZ0-SO-lAx">
+                                <rect key="frame" x="20" y="198" width="560" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rostbef-z-sosem-truskawkowym" translatesAutoresizingMaskIntoConstraints="NO" id="bST-1V-G92">
+                                <rect key="frame" x="213" y="288" width="175" height="175"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="egj-bU-w5K"/>
+                                    <constraint firstAttribute="height" constant="175" id="qVz-am-6X3"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBF-91-sai">
+                                <rect key="frame" x="213" y="288" width="175" height="175"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="+ Dodaj zdjęcie">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dodajZdjecieBtn:" destination="O2Y-SH-mz3" eventType="touchUpInside" id="FAa-m5-kFl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2i-MI-eVQ">
+                                <rect key="frame" x="238" y="499" width="124" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="124" id="56D-bc-IEA"/>
+                                    <constraint firstAttribute="height" constant="30" id="ODM-c0-NAa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Stwórz przepis"/>
+                                <connections>
+                                    <action selector="stworzPrzepisBtn:" destination="O2Y-SH-mz3" eventType="touchUpInside" id="xL7-4D-R8p"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qZ0-SO-lAx" firstAttribute="leading" secondItem="8M9-T4-GBh" secondAttribute="leadingMargin" id="0ah-vU-yxc"/>
+                            <constraint firstItem="CBF-91-sai" firstAttribute="height" secondItem="bST-1V-G92" secondAttribute="height" id="3wg-Gl-Djh"/>
+                            <constraint firstItem="C2i-MI-eVQ" firstAttribute="top" secondItem="CBF-91-sai" secondAttribute="bottom" constant="36" id="ACF-pF-6C6"/>
+                            <constraint firstItem="a3k-PY-JIe" firstAttribute="trailing" secondItem="8M9-T4-GBh" secondAttribute="trailingMargin" id="CwE-Nz-TD7"/>
+                            <constraint firstItem="C2i-MI-eVQ" firstAttribute="centerX" secondItem="8M9-T4-GBh" secondAttribute="centerX" id="JWc-kp-zNt"/>
+                            <constraint firstItem="qZ0-SO-lAx" firstAttribute="trailing" secondItem="8M9-T4-GBh" secondAttribute="trailingMargin" id="KBG-f3-ni1"/>
+                            <constraint firstItem="a3k-PY-JIe" firstAttribute="leading" secondItem="8M9-T4-GBh" secondAttribute="leadingMargin" id="NUP-RS-TgT"/>
+                            <constraint firstItem="CBF-91-sai" firstAttribute="centerX" secondItem="bST-1V-G92" secondAttribute="centerX" id="RtE-GS-xrI"/>
+                            <constraint firstItem="qZ0-SO-lAx" firstAttribute="top" secondItem="a3k-PY-JIe" secondAttribute="bottom" constant="20" id="Ugm-7P-L7K"/>
+                            <constraint firstItem="CBF-91-sai" firstAttribute="centerY" secondItem="bST-1V-G92" secondAttribute="centerY" id="Ver-Hy-hPl"/>
+                            <constraint firstItem="a3k-PY-JIe" firstAttribute="top" secondItem="gS8-3g-fjB" secondAttribute="bottom" constant="21" id="Ydc-iw-Xah"/>
+                            <constraint firstItem="gS8-3g-fjB" firstAttribute="leading" secondItem="8M9-T4-GBh" secondAttribute="leadingMargin" id="ao8-b5-YJP"/>
+                            <constraint firstItem="bST-1V-G92" firstAttribute="top" secondItem="qZ0-SO-lAx" secondAttribute="bottom" constant="60" id="n00-Fp-h5Y"/>
+                            <constraint firstItem="gS8-3g-fjB" firstAttribute="trailing" secondItem="8M9-T4-GBh" secondAttribute="trailingMargin" id="nzz-NE-ZbT"/>
+                            <constraint firstItem="CBF-91-sai" firstAttribute="width" secondItem="bST-1V-G92" secondAttribute="width" id="omW-yl-AnS"/>
+                            <constraint firstItem="bST-1V-G92" firstAttribute="centerX" secondItem="8M9-T4-GBh" secondAttribute="centerX" id="vT6-B5-7L9"/>
+                            <constraint firstItem="gS8-3g-fjB" firstAttribute="top" secondItem="m6l-zb-H0S" secondAttribute="bottom" constant="33" id="yiL-uA-ejx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="skladnikiField" destination="a3k-PY-JIe" id="8MO-un-2WD"/>
+                        <outlet property="sposobPrzygotowaniaField" destination="qZ0-SO-lAx" id="Nj8-To-rPJ"/>
+                        <outlet property="tytulPrzepisuField" destination="gS8-3g-fjB" id="ImA-iy-Sjh"/>
+                        <outlet property="zdjeciePrzepisu" destination="bST-1V-G92" id="q8t-xv-3A7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fRi-zf-iuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1780" y="337"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IN6-Jf-KW0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uNs-tk-cXC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k1y-B6-EbE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.99607843137254903" green="0.68711397173009248" blue="0.19701786699900015" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lPc-Lu-Yfp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LeS-1m-E7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="66" y="-355"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="rostbef-z-sosem-truskawkowym" width="1200" height="800"/>
+    </resources>
 </document>
